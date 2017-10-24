@@ -22,6 +22,25 @@ step1()
 .catch(handleError)
 ```
 
+The other advantages is, it's easy to interchange the position of the pipelines. 
+
+If you notice, writing it in this way also keeps your pipeline function cleaner - the first pipeline does not have to return a promise. If you use the latter way, then your `step2` function will look like this:
+
+```javascript
+function step2() {
+  return new Promise((resolve, reject) => {
+    resolve(1)
+  })
+}
+```
+
+With the first approach, you can just return the value and the pipeline will still work fine:
+```javascript
+function step2() {
+  return 1
+}
+```
+
 ## Composing pipelines
 
 One useful promise pattern is composing a pipeline, which is a series of process that is executed one after another. In an `express` application, this is how it might look like:
