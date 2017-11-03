@@ -225,6 +225,7 @@ async function returnMixResponses () {
     // Terminate program
   } else {
     // Log the errors
+    console.log('no. errors:', errors.length)
   }
   
   // Filter successful values
@@ -232,5 +233,9 @@ async function returnMixResponses () {
   
   // Do something with successful values
   console.log(successfulValues)
+  console.log('no. success:', successfulValues.length)
+  return true
 }
+
+returnMixResponses().then(console.log).catch(console.error)
 ```
