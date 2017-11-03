@@ -205,7 +205,7 @@ In the previous example, we show how to `fail silently` when running concurrent 
 - what can we do with the errors? (log it for forensic, or store it elsewhere so that we can perform recovery)
 
 ```javascript
-// This will run 10 doWork process concurrently, and will return null if it fails
+// This will run 10 doWork process concurrently, and will return both errors and success values
 async function returnMixResponses () {
   const promises = Array(10).fill(0).map((_, i) => {
     return doWork(i).catch((error) => {
