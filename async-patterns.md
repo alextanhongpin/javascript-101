@@ -196,3 +196,41 @@ stopOperationIfFail().catch(console.error)
 discardOperationThatFails().catch(console.error)
 ```
 
+## Better concurrent error handling
+
+In the previous example, we show how to `fail silently` when running concurrent processes by just logging the errors. But in production, you might want to do more than just logging the error. Ask yourself if the following is a concern:
+
+- the number of requests and response should match (if I fire 100 endpoints, 100 should be successful)
+- if we encounter failure, what is the threshold of the errors allowed? (if 100 is the threshold, the program should be terminated once it reaches the threshold)
+- what can we do with the errors? (log it for forensic, or store it elsewhere so that we can perform recovery)
+
+```
+// This will run 10 doWork process concurrently, and will return null if it fails
+async function returnMixResponses () {
+  const promises = Array(10).fill(0).map((_, i) => {
+    return doWork(i).catch((error) => {
+      console.log(error.message)
+      // Return the error object, if you need more details, you can return it as a json, but indicate
+      // that it is an error. e.g { error: true, message: error.message }
+      return error
+    })
+  })
+  const values = await Promise.all(promises)
+  console.log(values)
+
+  // Filter errors 
+  const errors = values.filter(e => e instanceof Error)
+  const ERROR_THRESHOLD = 100
+  if (errors.length > ERROR_THRESHOLD) {
+    // Terminate program
+  } else {
+    // Log the errors
+  }
+  
+  // Filter successful values
+  const successfulValues = values.filter(e => !(e instanceof Error))
+  
+  // Do something with successful values
+  console.log(successfulValues)
+}
+```
