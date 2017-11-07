@@ -54,3 +54,18 @@ async function  main () {
 
 main().catch(console.error)
 ```
+
+## Delay
+
+With `async/await`, it's easier to implement delay too:
+
+```javascript
+async function delay (duration: number): Promise<any> {
+  return new Promise(resolve => setTimeout(resolve, duration))
+}
+
+async main() {
+  await delay(1000)
+  console.log('this comes after 1 second')
+}
+```
