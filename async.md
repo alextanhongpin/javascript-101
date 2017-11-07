@@ -69,3 +69,21 @@ async main() {
   console.log('this comes after 1 second')
 }
 ```
+
+Note that there are differences between the way of calling await in `parallel/series`. This will delay for three seconds:
+
+```javascript
+console.time('timeDelay')
+await delay(1000)
+await delay(1000)
+await delay(1000)
+console.timeEnd('timeDelay')
+```
+
+This will only take 1 second to execute all three delays:
+
+```javascript
+console.time('timeDelay')
+await delay(1000) + await delay(1000) + await delay(1000)
+console.timeEnd('timeDelay')
+```
