@@ -101,8 +101,9 @@ class Heartbeat {
     const date = this.paddZero(dateObject.getDate() + 1)
     const hour = this.paddZero(dateObject.getHours())
     const minute = this.paddZero(dateObject.getMinutes())
+    const second = this.paddZero(dateObject.getSeconds())
 
-    return `${year}-${month}-${date} ${hour}:${minute}`
+    return `${year}-${month}-${date} ${hour}:${minute}:${second}`
   }
 
   info () {
@@ -183,7 +184,7 @@ Output:
 17
 18
 19
-[2018-02-28 23:19] errorCount = 0, idleCount = 0, beatCount = 19 status = RUNNING
+[2018-02-28 23:23:27] errorCount = 1, idleCount = 0, beatCount = 18 status = WARNING
 20
 21
 22
@@ -204,7 +205,7 @@ Output:
 37
 38
 39
-[2018-02-28 23:19] errorCount = 1, idleCount = 0, beatCount = 38 status = WARNING
+[2018-02-28 23:23:29] errorCount = 4, idleCount = 0, beatCount = 35 status = WARNING
 40
 41
 42
@@ -225,7 +226,7 @@ Output:
 57
 58
 59
-[2018-02-28 23:19] errorCount = 3, idleCount = 0, beatCount = 56 status = WARNING
+[2018-02-28 23:23:31] errorCount = 4, idleCount = 0, beatCount = 55 status = WARNING
 60
 61
 62
@@ -246,7 +247,7 @@ Output:
 77
 78
 79
-[2018-02-28 23:19] errorCount = 4, idleCount = 0, beatCount = 75 status = WARNING
+[2018-02-28 23:23:33] errorCount = 7, idleCount = 0, beatCount = 72 status = WARNING
 80
 81
 82
@@ -267,7 +268,7 @@ Output:
 97
 98
 99
-[2018-02-28 23:19] errorCount = 6, idleCount = 0, beatCount = 93 status = WARNING
+[2018-02-28 23:23:35] errorCount = 7, idleCount = 0, beatCount = 92 status = WARNING
 100
 101
 102
@@ -288,7 +289,7 @@ Output:
 117
 118
 119
-[2018-02-28 23:19] errorCount = 8, idleCount = 0, beatCount = 111 status = WARNING
+[2018-02-28 23:23:37] errorCount = 8, idleCount = 0, beatCount = 111 status = WARNING
 120
 121
 122
@@ -309,7 +310,7 @@ Output:
 137
 138
 139
-[2018-02-28 23:19] errorCount = 11, idleCount = 0, beatCount = 128 status = WARNING
+[2018-02-28 23:23:39] errorCount = 10, idleCount = 0, beatCount = 129 status = WARNING
 140
 141
 142
@@ -330,7 +331,7 @@ Output:
 157
 158
 159
-[2018-02-28 23:19] errorCount = 15, idleCount = 0, beatCount = 144 status = WARNING
+[2018-02-28 23:23:41] errorCount = 10, idleCount = 0, beatCount = 149 status = WARNING
 160
 161
 162
@@ -351,7 +352,7 @@ Output:
 177
 178
 179
-[2018-02-28 23:19] errorCount = 17, idleCount = 0, beatCount = 162 status = WARNING
+[2018-02-28 23:23:43] errorCount = 11, idleCount = 0, beatCount = 168 status = WARNING
 180
 181
 182
@@ -372,7 +373,7 @@ Output:
 197
 198
 199
-[2018-02-28 23:19] errorCount = 21, idleCount = 0, beatCount = 178 status = WARNING
+[2018-02-28 23:23:45] errorCount = 14, idleCount = 0, beatCount = 185 status = WARNING
 200
 201
 202
@@ -393,7 +394,7 @@ Output:
 217
 218
 219
-[2018-02-28 23:19] errorCount = 22, idleCount = 0, beatCount = 197 status = WARNING
+[2018-02-28 23:23:47] errorCount = 15, idleCount = 0, beatCount = 204 status = WARNING
 220
 221
 222
@@ -414,7 +415,7 @@ Output:
 237
 238
 239
-[2018-02-28 23:19] errorCount = 24, idleCount = 0, beatCount = 215 status = WARNING
+[2018-02-28 23:23:49] errorCount = 18, idleCount = 0, beatCount = 221 status = WARNING
 240
 241
 242
@@ -435,7 +436,7 @@ Output:
 257
 258
 259
-[2018-02-28 23:19] errorCount = 24, idleCount = 19, beatCount = 216 status = IDLE
+[2018-02-28 23:23:51] errorCount = 19, idleCount = 19, beatCount = 221 status = IDLE
 260
 261
 262
@@ -456,7 +457,7 @@ Output:
 277
 278
 279
-[2018-02-28 23:19] errorCount = 24, idleCount = 39, beatCount = 216 status = IDLE_THRESHOLD_EXCEEDED
+[2018-02-28 23:23:53] errorCount = 19, idleCount = 39, beatCount = 221 status = IDLE_THRESHOLD_EXCEEDED
 280
 281
 282
@@ -477,12 +478,12 @@ Output:
 297
 298
 299
-[2018-02-28 23:19] errorCount = 24, idleCount = 59, beatCount = 216 status = IDLE_THRESHOLD_EXCEEDED
+[2018-02-28 23:23:55] errorCount = 19, idleCount = 59, beatCount = 221 status = IDLE_THRESHOLD_EXCEEDED
 300
-{ beatCount: 216,
-  errorCount: 24,
+{ beatCount: 221,
+  errorCount: 19,
   idleCount: 59,
-  start: 2018-02-27T15:19:15.488Z,
-  end: 2018-02-27T15:19:46.322Z,
-  durationInSeconds: 30.834 }
+  start: 2018-02-27T15:23:24.970Z,
+  end: 2018-02-27T15:23:55.762Z,
+  durationInSeconds: 30.792 }
 ```
