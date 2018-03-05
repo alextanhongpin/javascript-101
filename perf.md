@@ -10,6 +10,9 @@ count += 1
 
 ## Keep-Alive connection
 
+
+Note that there might be memory leak here based on the post [here](https://github.com/request/request/issues/1637). 
+
 ```javascript
 function callAPI () {
   return new Promise((resolve, reject) => {
