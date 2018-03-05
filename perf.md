@@ -8,7 +8,7 @@ count++
 count += 1
 ```
 
-## Keep-alive connection
+## Keep-Alive connection
 
 ```javascript
 function callAPI () {
@@ -29,3 +29,7 @@ benchmark: 3739.762ms
 // without
 benchmark: 12530.025ms
 ```
+
+## Remove console.log
+
+Removing `console.log` improves performance a lot. You can send the logs through Kafka to a decentralized log for example.
