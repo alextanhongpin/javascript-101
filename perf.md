@@ -24,10 +24,10 @@ function callAPI () {
 
 // Testing with 10k requests json hello-world
 // with forever true
-benchmark: 3739.762ms
+// benchmark: 3739.762ms
 
 // without
-benchmark: 12530.025ms
+// benchmark: 12530.025ms
 ```
 
 ## Remove console.log
