@@ -36,3 +36,10 @@ function callAPI () {
 ## Remove console.log
 
 Removing `console.log` improves performance a lot. You can send the logs through Kafka to a decentralized log for example.
+
+
+## TODO
+
+1. Switch from expressjs to Aero.js. Benchmark the performance difference.
+2. Switch from request to native http.request with keep-alive
+3. Benchmark the node-onion architecture pattern against a plain one.
