@@ -37,9 +37,38 @@ function callAPI () {
 
 Removing `console.log` improves performance a lot. You can send the logs through Kafka to a decentralized log for example.
 
+## Switch to latest nodejs version
+
+Version 8.3 and above is using a different engine. TODO: Add link to related article.
+
+## Remove babel-transpiler
+
+Transpiling server-side code is unnessary. TODO: Show proof that performance is worse.
+
+
+## Switch from Express to Aero.js
+
+See the folder `/aero-vs-express`. Benchmark the performance difference. Apparently Express still excel, and can be faster than the native nodejs module. So maintain.
+
+## Switch from request to native http.request with keep-alive
+
+See `/request-client` folder:
+
+Small payload (hello world), 1000 concurrent requests:
+
+```
+native: 633.063ms
+request: 546.906ms
+```
+
+Large payload, 1000 concurrent requests:
+
+```
+native: 704.800ms
+request: 580.321ms
+```
+
+Seems like `request` module is still the clear winner.
 
 ## TODO
-
-1. Switch from expressjs to Aero.js. Benchmark the performance difference.
-2. Switch from request to native http.request with keep-alive
 3. Benchmark the node-onion architecture pattern against a plain one.
