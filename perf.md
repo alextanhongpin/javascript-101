@@ -70,5 +70,12 @@ request: 580.321ms
 
 Seems like `request` module is still the clear winner.
 
+## Increase memory size
+
+```bash
+$ node --max-old-space-size=8192 dist/index.js
+```
+
 ## TODO
 3. Benchmark the node-onion architecture pattern against a plain one.
+
