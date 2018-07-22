@@ -32,3 +32,12 @@ Array.from(Array.fill(10).keys())
 > Array(10).fill(0,0,4)
 [ 0, 0, 0, 0, <6 empty items> ]
 ```
+# Quick join
+```js
+let arr = [1, 2, 'a', '1a']
+console.log(arr.toString())
+// '1,2,a,1a'
+
+// Compared to this
+arr.join(',')
+```
