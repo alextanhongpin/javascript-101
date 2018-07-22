@@ -49,3 +49,15 @@ undefined
 > console.log('hi')
 hi
 ```
+
+## Logging function name
+
+Could be useful for logging.
+
+```js
+// Note that printing this.name in a function will not work
+> function apple() {console.log(apple.name)}
+undefined
+> apple()
+apple
+```
