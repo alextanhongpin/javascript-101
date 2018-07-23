@@ -37,7 +37,7 @@ undefined
 ```
 
 ## Grouping Console
-Adds indentation to grouped console:
+Adds indentation to grouped console. Especially useful when you have recursive function.
 ```bash
 > console.group('hello')
 hello
